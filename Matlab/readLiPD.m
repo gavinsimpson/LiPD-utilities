@@ -3,8 +3,9 @@ p=pwd;
 slashi=union(strfind(lpdname,'/'),strfind(lpdname,'\') );
 starti=max(union(0,slashi));
 headerName=lpdname((starti+1):(end-4));
-%display(lpdname)
+display(lpdname)
 unzip(lpdname,tempdir);
+display(tempdir)
 if isunix
     cd([tempdir headerName '/data' ]);
 else

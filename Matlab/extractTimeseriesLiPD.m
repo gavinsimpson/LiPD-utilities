@@ -155,6 +155,12 @@ for d=1:length(fieldnames(D)) %for every paleoarchive in database
                                     depthFlag=1;
                                     depthi=l4;
                                     depth=D.(dnames{d}).(ppnames{pp}).(l3names{l3}).(l4structs{l4}).values;
+                                    if ~isfield(D.(dnames{d}).(ppnames{pp}).(l3names{l3}).(l4structs{l4}),'units')
+                                       warning([dnames{d} '-' ppnames{pp} '-' l3names{l3} '-' l4structs{l4} ' doesnt have units'])
+                                       du=input('What should the units be?');
+                                       D.(dnames{d}).(ppnames{pp}).(l3names{l3}).(l4structs{l4}).units=du;
+
+                                    end
                                     depthUnits=D.(dnames{d}).(ppnames{pp}).(l3names{l3}).(l4structs{l4}).units;
                                 end
                             end

@@ -1,6 +1,6 @@
 %update LiPD library from google
 
-cd ~/Dropbox/LiPD/library/
+cd ~/Documents/Matlab/LiPDLibrary/
 
 l=dir('*.lpd');
 l={l.name}';

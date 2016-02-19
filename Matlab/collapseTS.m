@@ -66,7 +66,7 @@ for i=1:length(udsn)
             pubNum=str2num(pubVarName(4:(strfind(pubVarName,'_')-1)));
              if isempty(pubNum)
                     pubNum=1;
-                end
+             end
             Dnew.(matlab.lang.makeValidName(udsn{i})).pub{pubNum}.(pubVarName(strfind(pubVarName,'_')+1:end))=...
                 T.(fT{p(pin)});
         end
@@ -201,7 +201,7 @@ for i=1:length(udsn)
                 end
             end
             if ~ageFlag && ~yearFlag
-                error('no age or year data. The linearity (and existence) of time are necessary assumptions in the LiPD framework | a likely problem is that the length of the data does not match the length of the year and/or age vectors')
+                error(['no age or year data in record:' matlab.lang.makeValidName(udsn{i}) '. The linearity (and existence) of time are necessary assumptions in the LiPD framework | a likely problem is that the length of the data does not match the length of the year and/or age vectors'])
             end
         end
         %check for climate interpretation

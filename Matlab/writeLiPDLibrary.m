@@ -1,5 +1,6 @@
 %write LiPD library
-libDir='~/Dropbox/Pages2kPhase2/LibraryNew/';
+% libDir='~/Dropbox/Pages2kPhase2/LibraryNew/';
+libDir='~/Documents/MATLAB/LiPDLibrary';
 Dout=Dnew;
 
 %make the directory if you need to

@@ -87,32 +87,32 @@ end
 %check for climate interpretation - if there is a climate interp field but
 %no parameter, remove climate interp field
 
-for d=1:length(fnames)
-    mnames=fieldnames(D.(fnames{d}).paleoData);
-    CIflag=0;
-    for m=1:length(mnames)
-        cnames=fieldnames(D.(fnames{d}).paleoData.(mnames{m}));
-        for c=1:length(cnames)
-            if isfield(D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}),'climateInterpretation')
-                if ~isfield(D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation,'variable')
-                    if isfield(D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation,'climateVariable')
-                        D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation.variable=D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation.climateVariable;
-                        CIflag=1;
-                        try
-                            D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation.variableDetail=D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation.climateVariableDetail;
-                        catch DO
-                        end
-                    else
-                        
-                        
-                        D.(fnames{d}).paleoData.(mnames{m}).(cnames{c})=rmfield(D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}),'climateInterpretation');
-                    end
-                    
-                else
-                    CIflag=1;
-                end
-            end
-        end
-    end
-    dflag(d)=CIflag;
+% for d=1:length(fnames)
+%     mnames=fieldnames(D.(fnames{d}).paleoData);
+%     CIflag=0;
+%     for m=1:length(mnames)
+%         cnames=fieldnames(D.(fnames{d}).paleoData.(mnames{m}));
+%         for c=1:length(cnames)
+%             if isfield(D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}),'climateInterpretation')
+%                 if ~isfield(D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation,'variable')
+%                     if isfield(D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation,'climateVariable')
+%                         D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation.variable=D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation.climateVariable;
+%                         CIflag=1;
+%                         try
+%                             D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation.variableDetail=D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}).climateInterpretation.climateVariableDetail;
+%                         catch DO
+%                         end
+%                     else
+%                         
+%                         
+%                         D.(fnames{d}).paleoData.(mnames{m}).(cnames{c})=rmfield(D.(fnames{d}).paleoData.(mnames{m}).(cnames{c}),'climateInterpretation');
+%                     end
+%                     
+%                 else
+%                     CIflag=1;
+%                 end
+%             end
+%         end
+%     end
+%     dflag(d)=CIflag;
 end

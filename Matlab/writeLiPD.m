@@ -275,12 +275,13 @@ jout=savejsonld('',LiPDStruct,[goodOutName '.jsonld']);
 %fix unicode issues
 if isunix
     fixUnicodeFile([goodOutName '.jsonld'])
+    RemoveExtraCharactersFile([goodOutName '.jsonld'])
 end
 
 if bagit
     
     %2. bagit
-    system(['/Library/Frameworks/Python.framework/Versions/3.4/bin/bagit.py  ' outdir '/' goodOutName])
+    system(['/Library/Python/2.7/site-packages/bagit.py  ' outdir '/' goodOutName])
     
     %3. compress it and rename it
     system(['cd ' outdir '; zip -r ' outdir goodOutName '.lpd ' goodOutName]);

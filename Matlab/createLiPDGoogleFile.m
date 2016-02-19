@@ -21,6 +21,7 @@ if isfield(L,'googleSpreadSheetKey')
 
         pStructs=structFieldNames(L.paleoData);
         for p=1:length(pStructs)
+            
             if isfield(L.paleoData.(pStructs{p}),'googWorkSheetKey');
             L.paleoData.(pStructs{p})=rmfield(L.paleoData.(pStructs{p}),'googWorkSheetKey');
             end

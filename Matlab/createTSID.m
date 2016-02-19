@@ -6,7 +6,7 @@ function TSid=createTSID(variableName,dataSetName,spreadsheetKey,worksheetKey,al
 %altName proposes a TSid, rather than generating randomly
 
 if nargin<6
-   tsidPath='~/Dropbox/ml_scripts/';
+   tsidPath='~/Documents/MATLAB';
 end
    
 if nargin<7
@@ -16,7 +16,7 @@ if nargin<7
     
     %for nick - edit if you want to keep this in a certain spot on your
     %computer
-    cd tsidPath
+    cd(tsidPath)
     
     
     d=dir('tsidCell.mat');
