@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 % cd ~/Dropbox/Pages2kPhase2/LibraryNew/ %path to load
 
 cd ~/Documents/MATLAB/LiPDLibrary;
+=======
+cd ~/Dropbox/Pages2kPhase2/LibraryNew/ %path to load
+
+>>>>>>> master
 
 l=dir('*.lpd');
 l={l.name}';
